@@ -8,6 +8,16 @@ const formMessage = document.querySelector("#formMessage");
 let products = [];
 const quantities = new Map();
 
+const fallbackCsv = `id,name,description,price,icon
+wrap,Wrap se syrem,Celozrnna tortilla se syrem zeleninou a bylinkovym dipem,59,WR
+box,Svacina box,Mix ovoce zeleniny krupavych krekeru a domaci pomazanky,72,SB
+tycinka,Energy tycinka,Ovesna tycinka s cokoladou a orisky do batohu,29,ET
+limonada,Citronova limonada,Domaci limonada s matou v zalohovane lahvi,35,CL
+smoothie,Skolni smoothie,Jahody banan jogurt a kapka medu,49,SM
+muffin,Boruvkovy muffin,Mekky muffin s boruvkami peceny rano pred vyukou,32,BM
+sendvic,Toustovy sendvic,Zapeceny sendvic se sunkou syrem a rajcaty,55,TS
+salat,Mini salat,Cerstvy salat s kuskusem zeleninou a syrem balkanskeho typu,64,MS`;
+
 const moneyFormatter = new Intl.NumberFormat("cs-CZ", {
   style: "currency",
   currency: "CZK",
@@ -174,7 +184,10 @@ async function loadProducts() {
     renderProducts();
     updateSummary();
   } catch (error) {
-    grid.innerHTML = `<p class="form-note">${error.message}</p>`;
+    products = parseCsv(fallbackCsv);
+    renderProducts();
+    updateSummary();
+    formMessage.textContent = "Produkty jsou zobrazeny ze zalozni kopie. Pri spusteni pres GitHub Pages se nactou z products.csv.";
   }
 }
 

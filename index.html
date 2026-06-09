@@ -1,23 +1,121 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <title>DeepXSleepDaily</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SnackLab | Studentske svaciny</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo" aria-label="Logo SnackLab">
+          <span>SL</span>
+        </div>
+        <div>
+          <p class="eyebrow">studentska firma</p>
+          <h1>SnackLab</h1>
+        </div>
+      </div>
+      <nav aria-label="Hlavni navigace">
+        <a href="#produkty">Produkty</a>
+        <a href="#objednavka">Objednavka</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </header>
 
-    <h1>🌙 DeepXSleepDaily</h1>
-    <h2>Produkty pro lepší spánek</h2>
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">chytre svaciny do skoly</p>
+          <h2>Objednej si svacinu, ktera te podrzi mezi hodinami.</h2>
+          <p>
+            Vyrabime cerstve wrapy, domaci tycinky, limonady a male snack boxy
+            pro studenty, kteri chteji jist rychle, dobre a bez fronty.
+          </p>
+          <a class="primary-link" href="#produkty">Vybrat produkty</a>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="tray">
+            <span class="cup"></span>
+            <span class="wrap"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
+      </section>
 
-    <h3>Sleep Mask Pro</h3>
-    <p>299 Kč</p>
+      <section class="section-intro" id="produkty">
+        <div>
+          <p class="eyebrow">nase nabidka</p>
+          <h2>Produkty z CSV souboru</h2>
+        </div>
+        <p>Vyber mnozstvi u libovolnych polozek. Souhrn objednavky se prepocita automaticky.</p>
+      </section>
 
-    <h3>Memory Pillow</h3>
-    <p>899 Kč</p>
+      <section class="product-grid" id="productGrid" aria-live="polite"></section>
 
-    <h3>Blue Light Glasses</h3>
-    <p>499 Kč</p>
+      <section class="checkout" id="objednavka">
+        <form id="orderForm">
+          <div class="form-head">
+            <div>
+              <p class="eyebrow">dokonceni objednavky</p>
+              <h2>Kontakt na zakaznika</h2>
+            </div>
+            <p>Po odeslani se otevre e-mailovy klient s predvyplnenou sumarizaci.</p>
+          </div>
 
-</body>
+          <div class="fields">
+            <label>
+              Jmeno a prijmeni
+              <input id="customerName" name="customerName" type="text" autocomplete="name" required>
+            </label>
+            <label>
+              E-mail
+              <input id="customerEmail" name="customerEmail" type="email" autocomplete="email" required>
+            </label>
+            <label>
+              Telefon
+              <input id="customerPhone" name="customerPhone" type="tel" autocomplete="tel" required>
+            </label>
+          </div>
+
+          <div class="summary">
+            <div>
+              <span>Pocet objednanych kusu</span>
+              <strong id="totalPieces">0</strong>
+            </div>
+            <div>
+              <span>Souhrnna cena</span>
+              <strong id="totalPrice">0 Kc</strong>
+            </div>
+          </div>
+
+          <div class="order-lines" id="orderLines">
+            Zatim neni vybran zadny produkt.
+          </div>
+
+          <button class="submit-button" type="submit">Odeslat objednavku</button>
+          <p class="form-note" id="formMessage" role="status"></p>
+        </form>
+      </section>
+
+      <section class="contact" id="kontakt">
+        <div>
+          <p class="eyebrow">kontakt</p>
+          <h2>SnackLab, s. f.</h2>
+        </div>
+        <p>
+          Objednavky smeruji na <a href="mailto:app@kostka-skola.cz">app@kostka-skola.cz</a>.
+          Vydej probiha o velke prestavce u skolniho bufetu.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <span>SnackLab</span>
+      <span>Studentsky projekt pro GitHub Pages</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>

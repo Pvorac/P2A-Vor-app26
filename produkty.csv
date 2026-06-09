@@ -1,7 +1,9 @@
-id,nazev,cena
-1,Sleep Mask Pro,299
-2,Memory Pillow,899
-3,Blue Light Glasses,499
-4,Aroma Diffuser,699
-5,White Noise Speaker,1299
-6,Lavender Spray,249
+id,name,description,price,icon
+wrap,Wrap se syrem,Celozrnna tortilla se syrem zeleninou a bylinkovym dipem,59,🌯
+box,Svacina box,Mix ovoce zeleniny krupavych krekeru a domaci pomazanky,72,🥗
+tycinka,Energy tycinka,Ovesna tycinka s cokoladou a orisky do batohu,29,🍫
+limonada,Citronova limonada,Domaci limonada s matou v zalohovane lahvi,35,🍋
+smoothie,Skolni smoothie,Jahody banan jogurt a kapka medu,49,🥤
+muffin,Boruvkovy muffin,Mekky muffin s boruvkami peceny rano pred vyukou,32,🧁
+sendvic,Toustovy sendvic,Zapeceny sendvic se sunkou syrem a rajcaty,55,🥪
+salat,Mini salat,Cerstvy salat s kuskusem zeleninou a syrem balkanskeho typu,64,🥙
